@@ -16,6 +16,12 @@
   }
 }
 
-body {
-
+.intro-bg {
+  background-image: url('/intro-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.btn-teal {
+  border-radius: 16px;
+  background: linear-gradient(139deg, #00879b 4.96%, #5de8d7 100.3%);
 }
