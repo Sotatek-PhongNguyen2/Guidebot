@@ -21,7 +21,18 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.btn-teal {
-  border-radius: 16px;
+.bg-teal {
   background: linear-gradient(139deg, #00879b 4.96%, #5de8d7 100.3%);
+}
+.bg-teal-bold {
+  background: linear-gradient(
+    116deg,
+    #004968 16.73%,
+    #1a8d99 60.14%,
+    #34d2cc 83.71%
+  );
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px #30c2bc;
 }
