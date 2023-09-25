@@ -5,6 +5,18 @@ import { FaRegEdit } from 'react-icons/fa';
 import { BiSolidCheckCircle } from 'react-icons/bi';
 import { Inter } from 'next/font/google';
 import { useState } from 'react';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Checkbox } from '@/components/ui/checkbox';
 const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   const [tab, setTab] = useState('1');
@@ -758,7 +770,7 @@ export default function Home() {
         </div>
       </div>
       {/* ==============pricesiu================= */}
-      <div className='container flex justify-center pb-[10rem] pt-[1rem] flex-col'>
+      <div className='container flex justify-center pb-[8rem] pt-[1rem] flex-col'>
         <div className='text-center flex justify-center flex-col items-center'>
           <h4 className='text-[20px] font-bold text-[#00ADB5] bg-red pb-1  max-w-fit mx-auto tracking-5 uppercase'>
             PRICE
@@ -1024,7 +1036,190 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className='mt-10 text-center'>
+          <p className='text-[#06053A] font-bold text-[24px]'>API販売</p>
+          <div className='flex flex-col justify-center items-center mt-5'>
+            <div className='flex flex-col justify-center items-center'>
+              <p className='text-[#6A6B6C] text-xs font-medium'>
+                使用規模に合わせたプランをご用意しております
+              </p>
+              <p className='text-[#6A6B6C] text-xs font-medium'>
+                ご不明点やプランのご相談は
+                <span className='text-[#006682] font-black'>コチラ</span>
+                よりお問い合わせください
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+      {/* ==============contactsiu================= */}
+      <div className='bg-[#D0D0D0]'>
+        <div className='container flex justify-center pb-[5rem] pt-[4rem] flex-col'>
+          <div className='text-center flex justify-center flex-col items-center'>
+            <h4 className='text-[20px] font-bold text-[#00ADB5] bg-red pb-1  max-w-fit mx-auto tracking-5 uppercase'>
+              CONTACT
+            </h4>
+            <div className='h-[3px] w-[100px] rounded-full bg-[#00ADB5]'></div>
+          </div>
+          <div className='mt-5'>
+            <h5 className='text-[#06053A] text-center text-[32px] font-bold leading-[40px]'>
+              お問い合わせ
+            </h5>
+            <div className='mt-8 flex flex-col gap-6 items-center'>
+              <div className='grid w-full max-w-xl items-center gap-1.5'>
+                <Label
+                  className='text-[#06053A] text-[12px] font-bold'
+                  htmlFor='email'
+                >
+                  貴社名
+                </Label>
+                <Input
+                  className='rounded-sm'
+                  type='email'
+                  id='email'
+                  placeholder='貴社名を入力してください'
+                />
+              </div>
+              <div className='grid w-full max-w-xl items-center gap-1.5'>
+                <Label
+                  className='text-[#06053A] text-[12px] font-bold'
+                  htmlFor='email'
+                >
+                  担当者名
+                </Label>
+                <Input
+                  className='rounded-sm'
+                  type='email'
+                  id='email'
+                  placeholder='担当者名を入力してください'
+                />
+              </div>
+              <div className='grid w-full max-w-xl items-center gap-1.5'>
+                <Label
+                  className='text-[#06053A] text-[12px] font-bold'
+                  htmlFor='email'
+                >
+                  電話番号
+                </Label>
+                <Input
+                  className='rounded-sm'
+                  type='email'
+                  id='email'
+                  placeholder='電話番号を入力してください'
+                />
+              </div>
+              <div className='grid w-full max-w-xl items-center gap-1.5'>
+                <Label
+                  className='text-[#06053A] text-[12px] font-bold'
+                  htmlFor='email'
+                >
+                  メールアドレス
+                </Label>
+                <Input
+                  className='rounded-sm'
+                  type='email'
+                  id='email'
+                  placeholder='メールアドレスを入力してください'
+                />
+              </div>
+              <div className='grid w-full max-w-xl items-center gap-1.5'>
+                <Label
+                  className='text-[#06053A] text-[12px] font-bold'
+                  htmlFor='email'
+                >
+                  電話番号
+                </Label>
+                <Select>
+                  <SelectTrigger className='max-w-xl bg-white text-[#AAA]'>
+                    <SelectValue placeholder='情報収集' />
+                  </SelectTrigger>
+                  <SelectContent className=' bg-white text-[#AAA]'>
+                    <SelectGroup>
+                      <SelectLabel>情報収集</SelectLabel>
+                      <SelectItem value='test'>情報収集</SelectItem>
+                      <SelectItem value='test1'>情報収集</SelectItem>
+                      <SelectItem value='test2'>情報収集</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className='flex items-center space-x-2 mt-4'>
+                <Checkbox id='terms' className='text-black border-black' />
+                <label
+                  htmlFor='terms'
+                  className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+                >
+                  プライバシーポリシーに同意する
+                </label>
+              </div>
+              <button className='mt-4 bg-teal rounded-sm py-2 px-20 text-sm text-white font-bold'>
+                資料ダウンロード
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer className='bg-[#1B273D]'>
+        <div className='container py-8 flex gap-4'>
+          <div className='flex flex-col gap-5  w-[30%]'>
+            <p
+              className={`${inter.className} text-white text-[20px] font-bold`}
+            >
+              GuideBot
+            </p>
+            <div>
+              <p className='text-white font-normal mb-2'>
+                Follow on social service
+              </p>
+              <Image src={'/fb.svg'} height={25} width={25} alt='fb' />
+            </div>
+          </div>
+          <div className='flex justify-center flex-col gap-7 w-[70%]'>
+            <div className='flex w-full gap-10'>
+              <Select>
+                <SelectTrigger className='max-w-xl outline-0 text-[#FFF] border-b-1 border-x-0 border-t-0 rounded-none'>
+                  <SelectValue placeholder='情報収集' />
+                </SelectTrigger>
+                <SelectContent className=' bg-white text-[#AAA]'>
+                  <SelectGroup>
+                    <SelectLabel>情報収集</SelectLabel>
+                    <SelectItem value='test'>情報収集</SelectItem>
+                    <SelectItem value='test1'>情報収集</SelectItem>
+                    <SelectItem value='test2'>情報収集</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <Select>
+                <SelectTrigger className='max-w-xl text-[#FFF] outline-0 border-b-1 border-x-0 border-t-0 rounded-none'>
+                  <SelectValue placeholder='情報収集' />
+                </SelectTrigger>
+                <SelectContent className=' bg-white text-[#AAA]'>
+                  <SelectGroup>
+                    <SelectLabel>情報収集</SelectLabel>
+                    <SelectItem value='test'>情報収集</SelectItem>
+                    <SelectItem value='test1'>情報収集</SelectItem>
+                    <SelectItem value='test2'>情報収集</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <Select>
+                <SelectTrigger className='max-w-xl outline-0 text-[#FFF] border-b-1 border-x-0 border-t-0 rounded-none'>
+                  <SelectValue placeholder='情報収集' />
+                </SelectTrigger>
+                <SelectContent className=' bg-white text-[#AAA]'>
+                  <SelectGroup>
+                    <SelectLabel>情報収集</SelectLabel>
+                    <SelectItem value='test'>情報収集</SelectItem>
+                    <SelectItem value='test1'>情報収集</SelectItem>
+                    <SelectItem value='test2'>情報収集</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+            <p className='text-white text-[13px] text-right'>Copyright 2023@ all right</p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
