@@ -21,8 +21,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [tab, setTab] = useState("1");
   return (
-    <main className=" min-h-screen ">
-      <div className="intro-bg w-full h-[537px] ">
+    <main className=" min-h-screen">
+      <div className="intro-bg w-full h-[537px] hidden">
         <div className="container mx-auto pt-10 relative">
           <nav className="flex bg-white bg-opacity-[68%] rounded-[30px] items-center px-12 justify-between">
             <p className="font-bold text-lg">Guide Bot logo</p>
@@ -151,21 +151,60 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* =============================== */}
-      <div className="bg-[#06053A]">
-        <div className="relative container py-11 px-8 flex justify-center items-center gap-14">
-          <div className="w-[38%] mb-9">
-            <p className="text-white font-bold text-[24px] leading-[36px] mb-8 ">
+      {/* =================Cdgsiu================= */}
+      <div className="bg-[#06053A] border-none">
+        <div className="relative container py-32 md:pt-11 md:py-11 px-8 flex flex-col md:flex-row justify-center items-center gap-14">
+          <div className="w-0 h-0 absolute top-0 md:hidden border-l-[10rem] border-l-transparent border-t-[4rem] border-t-white border-r-[10rem] border-r-transparent"></div>
+          <div className="md:w-[38%] mb-9">
+            <p className="text-white font-bold text-[24px] leading-[36px] mb-8 mx-8 md:mx-0 text-center md:text-start">
               書類管理業務の負担や人的リソース不足にお悩みではありませんか？
             </p>
-            <p className="text-white text-[14px] leading-[40px] font-medium">
-              現代企業では常に、情報共有や問い合わせへの迅速な対応が求められます。
-            </p>
-            <p className="text-white text-[14px] leading-[40px] font-medium">
-              電子書類の検索と情報収集のプロセスにおける課題として、媒体管理における従来の手段には限界があり、大量の文書から特定の情報を見つけるのに時間と労力がかかるという声が多くありました。
-            </p>
+            {/* 3 bubble, md:hidden */}
+            <div className="flex gap-10 items-center justify-center mb-8 md:hidden">
+              <div className="flex gap-16 flex-col">
+                <div className="relative w-[194px] h-[194px] bg-white rounded-full flex justify-center items-center px-10">
+                  <p className="font-bold leading-[30px] text-[#06053A]">
+                    書類管理作業の 負担が大きく 業務に影響する
+                  </p>
+                  <div className="-top-[13px] -left-[13px] absolute h-[75px] w-[75px] bg-teal rounded-full flex justify-center items-center">
+                    <span className="font-bold text-[2.5rem] text-white">
+                      <HiOutlineChat />
+                    </span>
+                  </div>
+                </div>
+                <div className="relative w-[194px] h-[194px] bg-white rounded-full flex justify-center items-center px-10">
+                  <p className="font-bold leading-[30px] text-[#06053A]">
+                    書類管理作業の 負担が大きく 業務に影響する
+                  </p>
+                  <div className="-top-[13px] -left-[13px] absolute h-[75px] w-[75px] bg-teal rounded-full flex justify-center items-center">
+                    <span className="font-bold text-[2.5rem] text-white">
+                      <HiOutlineChat />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-[194px] h-[194px] bg-white rounded-full flex justify-center items-center px-10">
+                <p className="font-bold leading-[30px] text-[#06053A]">
+                  書類管理作業の 負担が大きく 業務に影響する
+                </p>
+                <div className="-top-[13px] -left-[13px] absolute h-[75px] w-[75px] bg-teal rounded-full flex justify-center items-center">
+                  <span className="font-bold text-[2.5rem] text-white">
+                    <HiOutlineChat />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="text-white text-[14px] leading-[40px] font-medium mx-8 md:mx-0">
+              <p>
+                現代企業では常に、情報共有や問い合わせへの迅速な対応が求められます。
+              </p>
+              <p>
+                電子書類の検索と情報収集のプロセスにおける課題として、媒体管理における従来の手段には限界があり、大量の文書から特定の情報を見つけるのに時間と労力がかかるという声が多くありました。
+              </p>
+            </div>
           </div>
-          <div className="flex gap-10 items-center ">
+          {/* 3 bubble, md screen visible */}
+          <div className="md:flex gap-10 items-center hidden">
             <div className="flex gap-16 flex-col">
               <div className="relative w-[194px] h-[194px] bg-white rounded-full flex justify-center items-center px-10">
                 <p className="font-bold leading-[30px] text-[#06053A]">
