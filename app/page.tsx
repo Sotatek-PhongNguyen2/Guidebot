@@ -22,6 +22,7 @@ export default function Home() {
   const [tab, setTab] = useState("1");
   return (
     <main className=" min-h-screen">
+      {/* TODO: remove hidden class later */}
       <div className="intro-bg w-full h-[537px] hidden">
         <div className="container mx-auto pt-10 relative">
           <nav className="flex bg-white bg-opacity-[68%] rounded-[30px] items-center px-12 justify-between">
@@ -302,8 +303,8 @@ export default function Home() {
       {/* =============================== */}
       <div className="bg-[#06053A]">
         <div className="relative container py-11 px-8 flex justify-center items-center gap-5  flex-col">
-          <div className="flex items-center">
-            <span className="text-[3rem] text-white mr-9">
+          <div className="flex items-center justify-center md:justify-start">
+            <span className="text-[3rem] text-white mr-9 hidden md:block">
               <FaRegEdit />
             </span>
             <h2
@@ -333,7 +334,7 @@ export default function Home() {
               実施中！
             </h2>
           </div>
-          <div className="flex gap-6">
+          <div className="flex gap-6 flex-col md:flex-row">
             <div className="flex flex-col justify-center items-center">
               <p className="text-sm text-white font-bold mb-3">
                 \「Guide bot」に関する /
