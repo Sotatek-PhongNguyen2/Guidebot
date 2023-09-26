@@ -1,4 +1,6 @@
 "use client";
+import FeatureCardMobile from "@/components/home-page/feature-card-mobile";
+import { features } from "@/components/home-page/feature-text";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -362,7 +364,7 @@ export default function Home() {
           </h4>
           <div className="h-[3px] w-[100px] rounded-full bg-[#00ADB5]"></div>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 hidden md:block">
           <h5 className="text-[#06053A] text-center text-[32px] font-bold leading-[40px]">
             Guide Botの特長
           </h5>
@@ -431,10 +433,27 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="text-center mt-[10rem]">
+        <div className="text-center mt-[10rem] hidden md:block">
           <button className="bg-teal text-[20px] py-2 px-4 text-white font-semibold rounded-lg drop-shadow-md shadow-md shadow-[#9CA4AB]">
             無料トライアル受付中
           </button>
+        </div>
+
+        {/* feature section on mobile */}
+        <div className="mt-5 md:hidden">
+          <h5 className="text-[#06053A] text-center text-base font-bold leading-[20px]">
+            Guide Botの特長
+          </h5>
+          <div className="flex flex-col gap-4">
+            {features.map((feature, index) => (
+              <FeatureCardMobile
+                index={index + 1}
+                feature={feature}
+                key={feature.title}
+                className="mt-10"
+              />
+            ))}
+          </div>
         </div>
       </div>
       {/* ==============usecasesiu================= */}
