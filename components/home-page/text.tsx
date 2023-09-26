@@ -29,3 +29,30 @@ export const features = [
     image: <Image src={Feature3Image} alt="" />,
   },
 ];
+
+export const pricePlan = [
+  {
+    name: "エントリープラン",
+    desc: "～10アカウント作成等エントリープランの説明が入ります",
+    price: 5,
+    amount: "4000",
+  },
+  {
+    name: "ライトプラン",
+    desc: "～10アカウント作成等ライトプランの説明が入ります",
+    price: 10,
+    amount: "9000",
+  },
+  {
+    name: "スタンダードプラン",
+    desc: "～10アカウント作成等ライトプランの説明が入ります",
+    price: 20,
+    amount: "19,000",
+  },
+  {
+    name: "プロプラン",
+    desc: "～10アカウント作成等ライトプランの説明が入ります",
+    price: 5,
+    amount: "30,000",
+  },
+];

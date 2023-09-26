@@ -1,6 +1,7 @@
 "use client";
 import FeatureCardMobile from "@/components/home-page/feature-card-mobile";
-import { features } from "@/components/home-page/feature-text";
+import PricingCardMobile from "@/components/home-page/pricing-card-mobile";
+import { features } from "@/components/home-page/text";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -447,7 +448,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="text-center mt-[10rem]">
+        <div className="text-center mt-[10rem] hidden md:block">
           <button className="bg-teal text-[20px] py-2 px-4 text-white font-semibold rounded-lg drop-shadow-md shadow-md shadow-[#9CA4AB]">
             無料トライアル受付中
           </button>
@@ -967,14 +968,14 @@ export default function Home() {
         </div>
       </div>
       {/* ==============pricesiu================= */}
-      <div className="container flex justify-center pb-[8rem] pt-[1rem] flex-col">
+      <div className="container flex justify-center pb-[8rem] pt-[1rem] flex-col items-center">
         <div className="text-center flex justify-center flex-col items-center">
           <h4 className="text-[20px] font-bold text-[#00ADB5] bg-red pb-1  max-w-fit mx-auto tracking-5 uppercase">
             PRICE
           </h4>
           <div className="h-[3px] w-[100px] rounded-full bg-[#00ADB5]"></div>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 hidden md:block">
           <h5 className="text-[#06053A] text-center text-[32px] font-bold leading-[40px]">
             料金プラン
           </h5>
@@ -1233,7 +1234,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mt-10 text-center">
+        <div className="mt-10 text-center hidden md:block">
           <p className="text-[#06053A] font-bold text-[24px]">API販売</p>
           <div className="flex flex-col justify-center items-center mt-5">
             <div className="flex flex-col justify-center items-center">
@@ -1248,6 +1249,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/* Pricing section on mobile */}
+        <p className="text-[#06053A] text-base font-bold mt-6">料金プラン</p>
+        <PricingCardMobile className="mt-8 md:hidden" />
       </div>
       {/* ==============contactsiu================= */}
       <div className="bg-[#D0D0D0]">
