@@ -13,6 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
@@ -22,6 +24,18 @@ import { HiOutlineChat } from "react-icons/hi";
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const [tab, setTab] = useState("1");
+  const [currentSlide, setCurrentSlide] = useState(1);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    slides: {
+      perView: 1.5,
+      spacing: 15,
+      origin: "center",
+    },
+    initial: 1,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+  });
   return (
     <main className=" min-h-screen">
       {/* TODO: remove hidden class later */}
@@ -433,7 +447,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="text-center mt-[10rem] hidden md:block">
+        <div className="text-center mt-[10rem]">
           <button className="bg-teal text-[20px] py-2 px-4 text-white font-semibold rounded-lg drop-shadow-md shadow-md shadow-[#9CA4AB]">
             無料トライアル受付中
           </button>
@@ -457,7 +471,7 @@ export default function Home() {
         </div>
       </div>
       {/* ==============usecasesiu================= */}
-      <div className="container flex justify-center pb-[10rem] pt-[1rem] flex-col">
+      <div className="hidden md:flex container justify-center pb-[10rem] pt-[1rem] flex-col">
         <div className="text-center flex justify-center flex-col items-center">
           <h4 className="text-[20px] font-bold text-[#00ADB5] bg-red pb-1  max-w-fit mx-auto tracking-5 uppercase">
             USE CASE
@@ -735,7 +749,128 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex gap-6 justify-center mt-5">
+          <div className="block md:hidden">
+            <div ref={sliderRef} className="keen-slider">
+              <div className="keen-slider__slide py-3 shadow-xl">
+                <div className="rounded-xl px-4 py-6 shadow-lg flex flex-col justify-between">
+                  <Image
+                    src={"/casestudy1.png"}
+                    alt="case1"
+                    height={180}
+                    width={700}
+                  />
+                  <p className="text-[#190D30] text-xs font-bold mt-5">
+                    ヘルプセンターでのGuide Bot導入後、顧客満足度が向上！
+                  </p>
+                  <p className="text-[#6A6B6C] mt-5 text-[10px] font-medium">
+                    Guide
+                    Bot導入後、迅速・正確なサポートが提供され、顧客満足度が向上しました
+                  </p>
+                  <div className="mt-5 flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="w-[28px] h-[28px] bg-[#D9D9D9] rounded-full border border-[#3D246C] mr-2"></div>
+                      <div>
+                        <p className="text-[#190D330] text-[10px] font-medium">
+                          企業名スペース
+                        </p>
+                        <p className="text-[#6A6B6C] text-[7px] font-medium">
+                          企業名スペース
+                        </p>
+                      </div>
+                    </div>
+                    <button className="bg-[#00ADB5] text-white rounded-lg py-2 px-4 font-semibold text-[11px]">
+                      ライトプラン
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="keen-slider__slide py-3 shadow-xl">
+                <div className="rounded-xl px-4 py-6 shadow-lg flex flex-col justify-between">
+                  <Image
+                    src={"/casestudy2.png"}
+                    alt="case1"
+                    height={180}
+                    width={700}
+                  />
+                  <p className="text-[#190D30] text-xs font-bold mt-5">
+                    社内の問い合わせ対応にGuideBotを活用し、業務効率が向上！
+                  </p>
+                  <p className="text-[#6A6B6C] mt-5 text-[10px] font-medium">
+                    導入により社内問い合わせ対応の効率が向上し、人的リソースを大幅に削減することができました
+                  </p>
+                  <div className="mt-5 flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="w-[28px] h-[28px] bg-[#D9D9D9] rounded-full border border-[#3D246C] mr-2"></div>
+                      <div>
+                        <p className="text-[#190D330] text-[10px] font-medium">
+                          企業名スペース
+                        </p>
+                        <p className="text-[#6A6B6C] text-[7px] font-medium">
+                          企業名スペース
+                        </p>
+                      </div>
+                    </div>
+                    <button className="bg-[#00ADB5] text-white rounded-lg py-2 px-4 font-semibold text-[11px]">
+                      ライトプラン
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="keen-slider__slide py-3 shadow-xl">
+                <div className="rounded-xl px-4 py-6 shadow-lg flex flex-col justify-between">
+                  <Image
+                    src={"/casestudy3.png"}
+                    alt="case1"
+                    height={180}
+                    width={700}
+                  />
+                  <p className="text-[#190D30] text-xs font-bold mt-5">
+                    教育機関でのGuide
+                    Bot採用後、関連性の高い情報の検索時間を大幅短縮！
+                  </p>
+                  <p className="text-[#6A6B6C] mt-5 text-[10px] font-medium">
+                    教育機関が当製品を採用し、関連情報の迅速な検索が可能になりました
+                  </p>
+                  <div className="mt-5 flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="w-[28px] h-[28px] bg-[#D9D9D9] rounded-full border border-[#3D246C] mr-2"></div>
+                      <div>
+                        <p className="text-[#190D330] text-[10px] font-medium">
+                          企業名スペース
+                        </p>
+                        <p className="text-[#6A6B6C] text-[7px] font-medium">
+                          企業名スペース
+                        </p>
+                      </div>
+                    </div>
+                    <button className="bg-[#00ADB5] text-white rounded-lg py-2 px-4 font-semibold text-[11px]">
+                      ライトプラン
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {[0, 1, 2].map((idx) => {
+              return (
+                <div
+                  key={idx}
+                  className="rotate-[30deg] rounded-full p-[2px] flex justify-center bg-gradient-to-r from-[#e2e8f0] via-[#A6ABBD] to-[#e2e8f0]"
+                >
+                  <button
+                    onClick={() => {
+                      instanceRef.current?.moveToIdx(idx);
+                      setCurrentSlide(idx);
+                    }}
+                    className={
+                      "w-4 h-4 rounded-full bg-white" +
+                      (currentSlide === idx ? " bg-teal" : "")
+                    }
+                  ></button>
+                </div>
+              );
+            })}
+          </div>
+          <div className="hidden md:flex gap-6 justify-center mt-5">
             <div className="w-[25%] rounded-xl px-4 py-8 shadow-lg">
               <Image
                 src={"/casestudy1.png"}
