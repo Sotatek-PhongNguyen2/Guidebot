@@ -8,7 +8,7 @@ type TabIndex = 1 | 2;
 const PricingCardMobile = ({ className }: { className?: string }) => {
   const [tab, setTab] = useState<TabIndex>(1);
   return (
-    <div className={cn(className, "flex flex-col w-[66%] bg-[#D9D9D9]")}>
+    <div className={cn(className, "flex flex-col w-[80%] bg-[#D9D9D9]")}>
       <div className="w-full flex">
         <button
           className={cn(
@@ -54,7 +54,7 @@ const PricingCardMobile = ({ className }: { className?: string }) => {
                   <div className="w-[10px] h-[20px] bg-[#006682] rounded-l-full"></div>
                   <div className="w-[10px] h-[20px] bg-[#5DE8D7] rounded-r-full"></div>
                 </div>
-                <div>
+                <div className='flex flex-col justify-center'>
                   <p className="text-[11px] font-medium text-[#6F6C90]">
                     ～XX人向け
                   </p>

@@ -15,6 +15,10 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+html,
+body {
+  -webkit-tap-highlight-color: transparent;
+}
 
 .intro-bg {
   background-image: url('/intro-bg.png');
@@ -35,4 +39,24 @@
 
 .text-stroke {
   -webkit-text-stroke: 1px #30c2bc;
+}
+.border-gradient {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  width: 15rem;
+  text-align: center;
+}
+.border-gradient:before {
+  width: 15rem;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  padding: 3px;
+  background: linear-gradient(139deg, #00879b 4.96%, #5de8d7 100.3%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
