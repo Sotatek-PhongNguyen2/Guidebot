@@ -26,7 +26,7 @@ function Footer() {
                 </p>
               </SheetTrigger>
               <SheetContent
-                className='h-[90%] bg-white container overflow-y-scroll'
+                className='md:h-[90%] bg-white container overflow-y-scroll mb-[2.6%] '
                 side={'bottom'}
               >
                 <SheetHeader>
@@ -89,7 +89,7 @@ function Footer() {
             </p>
           </SheetTrigger>
           <SheetContent
-            className='h-[90%] bg-white container overflow-y-scroll'
+            className='h-[100%] bg-white container overflow-y-scroll '
             side={'bottom'}
           >
             <SheetHeader>
